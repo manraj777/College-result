@@ -1,13 +1,15 @@
 import cv2
-import pytesseract
 from PIL import Image
+import pytesseract
 
+# Set Tesseract path
+pytesseract.pytesseract.tesseract_cmd = '/opt/homebrew/bin/tesseract'
 # If using Windows, set Tesseract path (update the path accordingly)
 # pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 # Load the image
-image = cv2.imread("captcha.png")  # Change to your image file
-
+image = cv2.imread("captchaimage.jpeg")  # Change to your image file
+print(image)
 # Convert image to grayscale (improves OCR accuracy)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
